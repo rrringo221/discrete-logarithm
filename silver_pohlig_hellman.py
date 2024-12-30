@@ -2,7 +2,9 @@ from sympy import factorint, mod_inverse
 
 
 def spg_discrete_log(g, a, p):
-
+    """
+    Реалізація алгоритму Сільвера-Поляга-Геллмана для g^x ≡ a (mod p).
+    """
     factors = factorint(p - 1)
     x_values = []
 
@@ -25,10 +27,9 @@ def spg_discrete_log(g, a, p):
 
 
 if __name__ == "__main__":
-    g = int(input("Введіть генератор g: "))
-    a = int(input("Введіть число a: "))
+    g = int(input("Введіть генератор a: "))
+    a = int(input("Введіть число b: "))
     p = int(input("Введіть просте число p: "))
 
     result = spg_discrete_log(g, a, p)
     print(f"x = {result}")
-#аналогічно попередньому завданню працездатність була перевірена на роботах прикладі завданнь в ДЗ
